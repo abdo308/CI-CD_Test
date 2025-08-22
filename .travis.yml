@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t abdo308/CI-CD_Test -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true abdo308/CI-CD_Test npm run test 
