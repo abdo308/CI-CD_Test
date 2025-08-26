@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'docker run abdalrhman308/ci-cd_test npm test'
+                sh 'docker run abdalrhman308/ci-cd_test npm test -- --watchAll=false'
             }
         }
     }
